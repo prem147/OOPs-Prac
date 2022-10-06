@@ -1,0 +1,48 @@
+Q. This means that a Bird object has all the properties that an Animal object has, as well as some additional unique properties.
+
+The code above is provided for you in your editor. You must add a sing method to the Bird class, then modify the main method accordingly so that the code prints the following lines:
+
+class Animal{
+    def walk(): Unit = {
+        print("I am walking");
+    }
+}
+
+class Bird extends Animal {
+    def fly(): Unit = {
+        print("I am flying");
+    }
+    def sing():Unit ={
+      print("I am singing")
+    }
+}
+Q. Write the following code in your editor below:
+
+A class named Arithmetic with a method named add that takes  integers as parameters and returns an integer denoting their sum.
+A class named Adder that inherits from a superclass named Arithmetic.
+
+class Arithmetic { def add(a:Int, b:Int) : Int={ 
+  return a+b } 
+}
+class Adder extends Arithmetic {}
+
+Q. Complete the code in your editor by writing an overridden getNumberOfTeamMembers method that prints the same statement as the superclass' getNumberOfTeamMembers method, except that it replaces  with  (the number of players on a Soccer team).
+
+class Sports{
+    def getName(): String = {
+        return "Generic Sports";
+    }
+    def getNumberOfTeamMembers():Unit={
+        print( "Each team has n players in " + getName() );
+    }
+}
+
+class Soccer extends Sports{
+    
+    override def getName(): String = {
+        return "Soccer Class";
+    }
+    override def getNumberOfTeamMembers(): Unit={
+        print( "Each team has 11 players in " + getName() );
+    }
+}
