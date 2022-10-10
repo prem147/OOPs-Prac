@@ -1,0 +1,87 @@
+Q. Testing a class using auxillary method
+
+class MyClass(val name :String,val age:Int) 
+{
+    //auxillary constructor
+    def this(name:String){
+        this(name,100)
+    }
+    def test():Unit={
+        println(name+" "+age)
+    }
+    }
+object main{
+    def main(args: Array[String]) {
+       val obj = new MyClass("test",24)
+       obj.test()
+       val obj1=new MyClass("test1")
+       
+       obj1.test()
+    }
+}
+
+Q. Every time object is called the the message or some other code will run of the class exept other methods.
+
+class MyClass(val name :String,val age:Int) 
+{
+    print("some message....\n")
+    //auxillary constructor
+    def this(name:String){
+        this(name,100)
+        
+    }
+    def test():Unit={
+        println(name+" "+age)
+    }
+    }
+object main{
+    def main(args: Array[String]) {
+       val obj = new MyClass("test",24)
+       obj.test()
+       val obj1=new MyClass("test1")
+       
+       obj1.test()
+    }
+}
+
+
+Q. Singeltons use cases
+
+class MyService() {
+    def test(): Unit={MyService.printMsg()}
+        
+}
+object MyService {
+    def printMsg(): Unit= {
+        println("test message singletons ")
+    }
+}
+object main {
+    def main(args: Array[String]) {
+        var m1= new MyService()
+        m1.test()
+    }
+}
+
+
+Q. Counting number of instances by calling the class and objects using for loop
+
+class testClass() {
+    testClass.instanceCnt+=1
+        
+}
+object testClass {
+    var instanceCnt=0
+    def printInstencesCnt(): Unit= {
+        println(instanceCnt)
+    }
+}
+object main {
+    def main(args: Array[String]) {
+       for(i<-1 to 10){
+            new testClass()
+           
+       }
+       testClass.printInstencesCnt()
+    }
+}
